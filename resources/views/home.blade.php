@@ -98,8 +98,8 @@ body {font-family: Verdana, sans-serif;}
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="registration.html"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
-          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{{ url('/registration')}}"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
+          <li><a href="{{ url('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>
   </nav>

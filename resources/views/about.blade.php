@@ -19,14 +19,14 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">HOME</a> </li>
+          <li><a href="{{ url('/home')}}">HOME</a> </li>
           <li><a href="#">BOOKS</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="{{ url('/about')}}">ABOUT US</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="registration.html"><span class="glyphicon glyphicon-user"></span> Be a Volunteer</a></li>
-          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{{ url('/registration')}}"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
+          <li><a href="{{ url('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
     </nav>
