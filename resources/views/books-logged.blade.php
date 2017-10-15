@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{{ url('/css/bootstrap.min.css') }}" rel="stylesheet">
+  <title>Project Estorya Ta!</title>
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <style>
 
@@ -13,7 +14,7 @@
 <body style="background-color: #D8D8D8; ">
 
   <header>
-     <img src="{{ asset('/images/petwname.png')}}" style="width:100%; height:40%;">
+     <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;">
   </header>
   
   <nav class="navbar navbar-inverse">

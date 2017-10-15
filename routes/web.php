@@ -11,22 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home');
+Route::view('/home', 'home');
+Route::view('/about',  'about');
+Route::view('/registration',  'registration');
+Route::view('/login',  'login', ['message'=>''])->name('login');
+Route::view('/books',  'books');
+Route::view('/test', 'test');
 
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/registration', function () {
-    return view('registration');
-});
-
-Route::get('/login', function () {
-    return view('login');
+Route::prefix('user')->group(function(){
+	Route::post('create', 'UserController@store');
+	Route::post('login', 'UserController@login');
+	Route::get('logout', 'UserController@logout');
 });

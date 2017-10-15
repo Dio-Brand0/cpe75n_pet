@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{{ url('/css/bootstrap.min.css') }}" rel="stylesheet">
+  <title>Project Estorya Ta!</title>
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <style>
 ul {list-style-type: none;}
@@ -85,7 +86,7 @@ body {font-family: Verdana, sans-serif;}
 <body style="background-color: #D8D8D8; ">
 
 <header>
-  <img src="{{ asset('/images/petwname.png')}}" style="width:100%; height:40%;"> 
+  <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;"> 
 </header>
   
   <nav class="navbar navbar-inverse">
@@ -98,7 +99,7 @@ body {font-family: Verdana, sans-serif;}
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+          <li><a href="{{ url('user/logout')}}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
         </ul>
     </div>
   </nav>
@@ -140,7 +141,7 @@ body {font-family: Verdana, sans-serif;}
         </div>
 
         <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarusel" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
         </a>

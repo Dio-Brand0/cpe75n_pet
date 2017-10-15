@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Estorya Ta!</title>
   
-  <link href="{{ url('/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <style>
 ul {list-style-type: none;}
@@ -86,23 +87,30 @@ body {font-family: Verdana, sans-serif;}
 <body style="background-color: #D8D8D8; ">
 
 <header>
-  <img src="{{ asset('/images/petwname.png')}}" style="width:100%; height:40%;"> 
+  <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;"> 
 </header>
   
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li class="active"> <a href="{{ url('/home')}}">HOME</a> </li>
-          <li><a href="#">BOOKS</a></li>
-          <li><a href="{{ url('/about') }}">ABOUT US</a></li>
+          <li><a href="{{ url('home')}}">HOME</a> </li>
+          <li><a href="{{ url('books') }}">BOOKS</a></li>
+          @if (session('name'))
+            <li><a href="{{ url('test')}}">PROJECT MANAGER</a></li>
+          @endif
+          <li><a href="{{ url('about')}}">ABOUT US</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ url('/registration')}}"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
-          <li><a href="{{ url('/login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          @if (!session('name'))
+          <li><a href="{{ url('registration')}}"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
+          <li><a href="{{ url('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          @else
+          <li><a href="{{ url('user/logout')}}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+          @endif
         </ul>
-    </div>
-  </nav>
+      </div>
+    </nav>
   
   <div class="row">
 
@@ -136,7 +144,7 @@ body {font-family: Verdana, sans-serif;}
 
         <!-- Left and right controls -->
         
-        <a class="left carousel-control" href="#myCarusel" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
         </a>
