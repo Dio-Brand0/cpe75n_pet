@@ -4,17 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Estorya Ta!</title>
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <style>
-
 </style>
 </head>
 <body style="background-color: #D8D8D8; ">
 
   <header>
-    <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;">
+    <img src="./images/petwname.png" style="width:100%; height:40%;"> 
   </header>
   
   <nav class="navbar navbar-inverse">
@@ -38,11 +36,25 @@
         </ul>
       </div>
     </nav>
-
-  <div class="container">
-    <div class="row" style="margin-top: 5%; margin-bottom: 5%">
-      <blockquote>wait for input from other groups.</blockquote>
+    
+  <div class="row">
+  <div class="col-md-8">
+  <form>
+    <div class="form-group" style="width: 50%; margin-left: 50%; margin-top: 5%">
+      <label for="username"> ACTIVITY: </label>
+      <input type="text" class="form-control" id="username" name="username" maxlength="15" required>
     </div>
+
+    <div class="form-group" style="width: 50%; margin-left: 50%;">
+      <label for="email"> Description: </label>
+      <input type="text" class="form-control" id="email" name="email" maxlength="20" minlength="8" required>
+    </div>
+
+ 
+
+    <button type="submit" class="btn btn-default" style="margin-left: 50%; margin-bottom: 10%">Submit</button>
+  </form>
+  </div>
   </div>
 
 <div class="row" style="background-color: #3B3B3B;">
@@ -54,7 +66,7 @@
 </div>
 
 </div>
-<script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="assets/jquery-3.1.1/jquery.min.js"></script>
+    <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

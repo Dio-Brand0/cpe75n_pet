@@ -4,17 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Estorya Ta!</title>
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
 
 <style>
-
 </style>
 </head>
 <body style="background-color: #D8D8D8; ">
 
   <header>
-    <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;">
+    <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;"> 
   </header>
   
   <nav class="navbar navbar-inverse">
@@ -39,11 +38,25 @@
       </div>
     </nav>
 
-  <div class="container">
-    <div class="row" style="margin-top: 5%; margin-bottom: 5%">
-      <blockquote>wait for input from other groups.</blockquote>
-    </div>
-  </div>
+<body>
+<div>
+
+<a href="{{url('activity')}}">
+ <button class="btn btn-sm btn-success">New Topic</button>
+</a>
+
+ 
+<table class="table table-bordered" id="productTable">
+        <thead>
+            <th><center>Title</center></th>
+            <th><center>Replies</center></th>
+        </thead>
+        <tbody>
+        
+
+    </table>
+
+</div>
 
 <div class="row" style="background-color: #3B3B3B;">
   <font color="white" style="margin-top: 5%">
@@ -54,7 +67,7 @@
 </div>
 
 </div>
-<script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="assets/jquery-3.1.1/jquery.min.js"></script>
+    <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

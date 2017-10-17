@@ -17,10 +17,16 @@ Route::view('/about',  'about');
 Route::view('/registration',  'registration');
 Route::view('/login',  'login', ['message'=>''])->name('login');
 Route::view('/books',  'books');
-Route::view('/test', 'test');
+Route::view('/activity', 'activity');
+Route::view('/project',  'project');
 
 Route::prefix('user')->group(function(){
 	Route::post('create', 'UserController@store');
 	Route::post('login', 'UserController@login');
 	Route::get('logout', 'UserController@logout');
+});
+
+Route::prefix('forum')->group(function(){
+	Route::view('/', 'forum')->middleware('islog');
+	//Route::get('/');
 });

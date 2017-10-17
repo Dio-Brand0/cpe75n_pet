@@ -23,7 +23,7 @@
           <li><a href="{{ url('home')}}">HOME</a> </li>
           <li><a href="{{ url('books') }}">BOOKS</a></li>
           @if (session('name'))
-            <li><a href="{{ url('test')}}">PROJECT MANAGER</a></li>
+            <li><a href="{{ url('forum')}}">PROJECT MANAGER</a></li>
           @endif
           <li><a href="{{ url('about')}}">ABOUT US</a></li>
         </ul>
