@@ -106,6 +106,7 @@ body {font-family: Verdana, sans-serif;}
           <li><a href="{{ url('registration')}}"><span class="glyphicon glyphicon-user"></span> Be a Volunteer </a></li>
           <li><a href="{{ url('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           @else
+          <li><a><span>Hello, {{session('name')}}</span></a></li>
           <li><a href="{{ url('user/logout')}}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
           @endif
         </ul>
