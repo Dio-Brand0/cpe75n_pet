@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use App\Models\User;
+use App\Models\Comments;
+use App\Models\Topics;
+use Illuminate\Support\Facades\View;
 
-class UserController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,32 +19,19 @@ class UserController extends Controller
         //
     }
     /**
-     * Login as user
+     * Display a listing of comments with a topic id.
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(Request $request)
+    public function getFromTopic($title)
     {
         //
-        $data = $request->all();
-        $user = User::where('email', $data['email'])->first();
-        if (password_verify($data['password'],$user['password'])) {
-            $request->session()->put('name',$user['name']);
-            $request->session()->put('id',$user['id']);
-            return redirect('home');
-        } else {
-            return redirect('login')->with('message','Invalid credentials!');
-        }
-    }
-    /**
-     * Logout as user
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function logout(Request $request)
-    {
-        $request->session()->flush();
-        return redirect('home');
+        $topic = Topics::where('title', $title)->first();
+        $comments = Comments::where('topic_id', $topic->id)
+                    ->orderBy('comments.created_at', 'desc')
+                    ->join('users', 'users.id', '=', 'comments.user_id')
+                    ->get();
+        return View::make('topic')->with('comments', $comments)->with('topic', $topic);
     }
 
     /**
@@ -64,18 +52,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = $request->all();
-        User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
-            'contact' => $data['contact'],
-            'address' => $data['address'],
-        ]);
-        return redirect('login');
+        $comment = new Comments;
+        $comment->message = $data['message'];
+        $comment->topic_id = $data['topic_id'];
+        $comment->user_id = $request->session()->get('id');
+        $comment->save();
+        return redirect('forum/'.$data['title']);
     }
 
     /**

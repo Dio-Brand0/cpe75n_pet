@@ -39,7 +39,7 @@
     </nav>
 
 <body>
-<div>
+<div style="min-height: 335px">
 
 <a href="{{url('forum/activity')}}">
  <button class="btn btn-sm btn-success">New Topic</button>
@@ -54,7 +54,7 @@
         <tbody>
           @foreach ($topics as $topic)
           <tr>
-            <td><center>{{$topic->title}}</center></td>
+            <td><center><a href="forum/{{urlencode($topic->title)}}">{{$topic->title}}</a></center></td>
             <td><center>{{$topic->description}}</center></td>
           </tr>
           @endforeach

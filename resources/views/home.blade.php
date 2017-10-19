@@ -186,7 +186,7 @@ body {font-family: Verdana, sans-serif;}
         <li>7</li>
         <li>8</li>
         <li>9</li>
-        <li><span class="active">10</span></li>
+        <li>10</li>
         <li>11</li>
         <li>12</li>
         <li>13</li>
@@ -196,7 +196,7 @@ body {font-family: Verdana, sans-serif;}
         <li>17</li>
         <li>18</li>
         <li>19</li>
-        <li>20</li>
+        <li><span class="active">20</span></li>
         <li>21</li>
         <li>22</li>
         <li>23</li>

@@ -28,6 +28,8 @@ Route::prefix('user')->group(function(){
 Route::prefix('forum')->group(function(){
 //	Route::view('/', 'project')->middleware('islog');
 	Route::get('/','TopicController@index')->middleware('islog');
-	Route::post('/create', 'TopicController@store');
-	Route::view('/activity', 'activity');
+	Route::post('/create', 'TopicController@store')->middleware('islog');
+	Route::view('/activity', 'activity')->middleware('islog');
+	Route::post('/topic', 'CommentsController@store')->middleware('islog');
+	Route::get('/{title}', 'CommentsController@getFromTopic')->middleware('islog');
 });

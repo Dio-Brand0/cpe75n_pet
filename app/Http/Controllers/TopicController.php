@@ -39,10 +39,11 @@ class TopicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Topics::create([
-            'title' => $data['title'],
-            'description' => $data['description']
-        ]);
+        $topic = new Topics;
+        $topic->title = $data['title'];
+        $topic->description = $data['description'];
+        $topic->user_id = $request->session()->get('id');
+        $topic->save();
         return redirect('forum');
     }
 
