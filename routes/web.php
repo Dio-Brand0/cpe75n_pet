@@ -17,7 +17,6 @@ Route::view('/about',  'about');
 Route::view('/registration',  'registration');
 Route::view('/login',  'login', ['message'=>''])->name('login');
 Route::view('/books',  'books');
-Route::view('/activity', 'activity');
 Route::view('/project',  'project');
 
 Route::prefix('user')->group(function(){
@@ -27,6 +26,8 @@ Route::prefix('user')->group(function(){
 });
 
 Route::prefix('forum')->group(function(){
-	Route::view('/', 'forum')->middleware('islog');
-	//Route::get('/');
+//	Route::view('/', 'project')->middleware('islog');
+	Route::get('/','TopicController@index')->middleware('islog');
+	Route::post('/create', 'TopicController@store');
+	Route::view('/activity', 'activity');
 });

@@ -12,7 +12,7 @@
 <body style="background-color: #D8D8D8; ">
 
   <header>
-    <img src="./images/petwname.png" style="width:100%; height:40%;"> 
+    <img src="{{ asset('images/petwname.png')}}" style="width:100%; height:40%;"> 
   </header>
   
   <nav class="navbar navbar-inverse">
@@ -39,15 +39,16 @@
     
   <div class="row">
   <div class="col-md-8">
-  <form>
+  <form method="POST" action="{{url('forum/create')}}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group" style="width: 50%; margin-left: 50%; margin-top: 5%">
-      <label for="username"> ACTIVITY: </label>
-      <input type="text" class="form-control" id="username" name="username" maxlength="15" required>
+      <label for="title"> ACTIVITY: </label>
+      <input type="text" class="form-control" id="title" name="title" maxlength="15" required>
     </div>
 
     <div class="form-group" style="width: 50%; margin-left: 50%;">
-      <label for="email"> Description: </label>
-      <input type="text" class="form-control" id="email" name="email" maxlength="20" minlength="8" required>
+      <label for="description"> Description: </label>
+      <input type="text" class="form-control" id="description" name="description" maxlength="255" minlength="8" required>
     </div>
 
  

@@ -41,17 +41,24 @@
 <body>
 <div>
 
-<a href="{{url('activity')}}">
+<a href="{{url('forum/activity')}}">
  <button class="btn btn-sm btn-success">New Topic</button>
 </a>
 
  
 <table class="table table-bordered" id="productTable">
         <thead>
-            <th><center>Title</center></th>
-            <th><center>Replies</center></th>
+            <th style="width:50%"><center>Title</center></th>
+            <th style="width:50%"><center>Description</center></th>
         </thead>
         <tbody>
+          @foreach ($topics as $topic)
+          <tr>
+            <td><center>{{$topic->title}}</center></td>
+            <td><center>{{$topic->description}}</center></td>
+          </tr>
+          @endforeach
+        </tbody>
         
 
     </table>
