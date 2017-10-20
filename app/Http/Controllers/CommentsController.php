@@ -26,6 +26,7 @@ class CommentsController extends Controller
     public function getFromTopic($title)
     {
         //
+        $title = urldecode($title);
         $topic = Topics::where('title', $title)->first();
         $comments = Comments::where('topic_id', $topic->id)
                     ->orderBy('comments.created_at', 'desc')

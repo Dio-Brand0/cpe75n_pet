@@ -39,6 +39,10 @@ class TopicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $check = Topics::where('title', $data['title'])->count();
+        if ($check > 0) {
+            return redirect('forum/activity')->with('message', 'Title is taken!');
+        }
         $topic = new Topics;
         $topic->title = $data['title'];
         $topic->description = $data['description'];

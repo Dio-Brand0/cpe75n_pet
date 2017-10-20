@@ -54,7 +54,7 @@
 
  
 
-    <button type="submit" class="btn btn-default" style="margin-left: 50%; margin-bottom: 10%">Submit</button>
+    <button type="submit" class="btn btn-default" style="margin-left: 50%">Submit</button>
     <h2 style="margin-left: 50%; margin-bottom: 10%">{{session('message')}}</h2>
   </form>
   </div>
