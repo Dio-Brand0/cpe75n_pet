@@ -44,7 +44,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group" style="width: 50%; margin-left: 50%; margin-top: 5%">
       <label for="title"> ACTIVITY: </label>
-      <input type="text" class="form-control" id="title" name="title" maxlength="15" required>
+      <input type="text" class="form-control" id="title" name="title" maxlength="20" required>
     </div>
 
     <div class="form-group" style="width: 50%; margin-left: 50%;">
@@ -55,6 +55,7 @@
  
 
     <button type="submit" class="btn btn-default" style="margin-left: 50%; margin-bottom: 10%">Submit</button>
+    <h2 style="margin-left: 50%; margin-bottom: 10%">{{session('message')}}</h2>
   </form>
   </div>
   </div>

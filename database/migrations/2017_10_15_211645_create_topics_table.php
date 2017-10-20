@@ -15,7 +15,7 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 15)->unique();
+            $table->string('title', 20)->unique();
             $table->string('description');
             $table->timestamps();
             $table->integer('user_id')->unsigned();
