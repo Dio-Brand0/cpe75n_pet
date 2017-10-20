@@ -49,7 +49,7 @@
 
     <div class="form-group" style="width: 50%; margin-left: 50%;">
       <label for="description"> Description: </label>
-      <input type="text" class="form-control" id="description" name="description" maxlength="255" minlength="8" required>
+      <input type="text" class="form-control" id="description" name="description" maxlength="255" required>
     </div>
 
  
