@@ -42,7 +42,7 @@
 
   <div class="container">
     <div class="row" style="margin-top: 5%; margin-bottom: 5%">
-      <blockquote>wait for input from other groups.</blockquote>
+      <blockquote>Coming soon! Hang tight!</blockquote>
     </div>
   </div>
 
